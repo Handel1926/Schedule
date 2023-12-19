@@ -329,7 +329,7 @@ const handleNoteEdit = async (title: string, note: string, id?: string)=>{
         </div>
       ))}
        </div>
-      <div className=" h-full w-full mt-6 md:py-6 cursor-pointer flex ju md:flex-col mt-1 gap-2 md:gap-0 justify-center">
+      <div className=" h-full w-full mt-10 md:py-6 cursor-pointer flex ju md:flex-col mt-1 gap-2 md:gap-0 justify-center">
         <h1 className="w-fit md:my-8 shadow-sm shadow-black rounded-md p-1 taskBar text-xs" onClick={()=>handleTRD(1)}>ToDo +</h1>
         <h1 className="w-fit md:my-8 shadow-sm shadow-black rounded-md  taskBar p-1 text-xs" onClick={()=>handleTRD(2)}>Reminder +</h1>
         <h1 className="w-fit h-fit md:my-4 text-xs shadow-sm shadow-black rounded-md p-1 taskBar" onClick={()=>handleTRD(3)}>Notes +</h1>
