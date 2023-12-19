@@ -1,10 +1,10 @@
 'use client'
-import {useState} from 'react'
+import React, {useState} from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import toast, {Toaster} from 'react-hot-toast'
 
-export default function page() {
+export default function Page() {
   const router = useRouter()
   const [showPassword, setShowPassword] = useState<boolean>(false)
   const [isLoading, setIsLoading] = useState<boolean>(false)

@@ -85,6 +85,7 @@ export default function Home() {
   },[isLoading])
 
   useEffect(()=>{
+    const date = new Date()
     const time = `${date.getHours() <= 9 ? "0" + date.getHours().toString(): date.getHours()}:${date.getMinutes()<= 9 ? "0" + date.getMinutes().toString(): date.getMinutes()}`
     setTimeout(()=>{
       setCurrentTime(time)
@@ -342,7 +343,7 @@ const handleNoteEdit = async (title: string, note: string, id?: string)=>{
                   <h1 className="bg-gray-300" >Todo</h1>
                   {todoList && todoList.length > 0 ? 
                   todoList.map((todo, index)=>(
-                    <div className="flex justify-between">
+                    <div className="flex justify-between" key={`div${index}`}>
                       <p key={`${index}todo`}>{todo.todo}</p>
                       <p onClick={()=>handleDelet(todo._id, "todo")} className="p-2 text-red-700"><MdDeleteForever /></p>
                     </div>
@@ -354,7 +355,7 @@ const handleNoteEdit = async (title: string, note: string, id?: string)=>{
                   <h1 className="bg-gray-300">Reminder</h1>
                   {reminderList && reminderList.length > 0? 
                   reminderList.map((reminder, index)=>(
-                    <div className="flex justify-between">
+                    <div className="flex justify-between" key={`remdiv${index}`}>
                       <p key={`${index}reminder`}>{reminder.reminder}</p>
                       <p><span>{reminder.date} -- {reminder.time}</span></p>
                       <p onClick={()=>handleDelet(reminder._id, "reminder")} className="p-2 text-red-700"><MdDeleteForever /></p>

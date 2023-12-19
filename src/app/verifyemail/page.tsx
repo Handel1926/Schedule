@@ -9,7 +9,7 @@ import { useRouter } from 'next/navigation'
 
 
 
-export default function () {
+export default function Page() {
   const router = useRouter()
   const [data, setData] = useState<string>()
   const logout = async ()=>{

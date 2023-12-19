@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 import toast, {Toaster} from 'react-hot-toast'
 
 
-export default function page() {
+export default function Page() {
   const router = useRouter()
   const [showPassword, setShowPassword] = useState<boolean>(false)
   const [email, setEmail] = useState<string>()
