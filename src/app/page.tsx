@@ -258,7 +258,7 @@ const handleNoteEdit = async (title: string, note: string, id?: string)=>{
         <div className=' w-full text-center cursor-pointer'>
             <h1>{`${today}th/${currentMonth}/${currentYear}`}</h1>
         </div>
-        <div className=' w-full text-center cursor-pointer' onClick={handleLogout}>Logout</div>
+        <div className=' w-full text-center cursor-pointer' onClick={()=>handleLogout()}>Logout</div>
       </nav>
       <div className=" bg-gray-50 relative  flex items-center flex-col p-2 row-span-3">
         <h1  className="absolute top-0 z-10 text-center flex justify-around flex-nowrap bg-slate-300 h-fit p-2 w-full rounded-sm shadow-sm shadow-black">
