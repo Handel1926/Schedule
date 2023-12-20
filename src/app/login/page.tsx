@@ -37,15 +37,15 @@ export default function Page() {
     }
   }
   return (
-    <main className='flex flex-col bg-pink-200 h-screen text-gray-700'>
+    <main className='flex flex-col bg-pink-200 h-screen w-full text-gray-700 '>
         <div className='w-full h-fit p-3 flex justify-between'>
             <h1 className='text-5xl'>Schedule</h1>
             <Link href={'/signup'} className='text-xl hover:bg-gray-50 rounded-full bg-gray-950 text-white hover:text-gray-950  hover:shadow-md h-fit p-2 shadow-black'>SignUp</Link>
         </div>
         <Toaster />
         <div className='flex justify-center items-center w-full h-full p-4'>
-            <div className='bg-gray-900 w-2/5 h-2/3 rounded-lg shadow-md shadow-black grid grid-cols-3'>
-              <div className=' col-span-2 shadow-inner shadow-black rounded-lg p-6'>
+            <div className='bg-gray-900 w-11/12 lg:w-2/5 md:w-1/2 sm:w-4/5 h-fit rounded-lg shadow-md shadow-black grid grid-rows-3 md:grid-rows-1 md:grid-cols-3'>
+              <div className=' row-span-2 md:col-span-2 shadow-inner shadow-black rounded-lg p-6'>
                   <form action="" onSubmit={handleSubmit} className='flex flex-col gap-3 p-2 text-gray-50'>
                     <label htmlFor="email">Email</label>
                     <input className='text-black' onChange={(e)=>setEmail(e.target["value"])} name='email' value={email} type="email" required />

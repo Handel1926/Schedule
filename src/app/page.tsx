@@ -251,7 +251,7 @@ const handleNoteEdit = async (title: string, note: string, id?: string)=>{
 }
  
   return (
-    <main className=" overflow-scroll bg-orange-100 pt-12 text-gray-950 grid grid-rows-7  md:grid-cols-5 md:grid-rows-1 h-screen md:overflow-hidden">
+    <main className=" overflow-scroll bg-orange-100 pt-12 text-gray-950 grid grid-rows-7  lg:grid-cols-5 lg:grid-rows-1 h-screen lg:overflow-hidden">
       <nav className='w-full flex p-2 fixed top-0 z-50 bg-gray-950 text-orange-50 shadow-sm shadow-emerald-900'>
         
         <div className='w-full text-center cursor-pointer'>{userName}</div>
@@ -271,9 +271,9 @@ const handleNoteEdit = async (title: string, note: string, id?: string)=>{
             <p className={`p-2 hover:bg-slate-400`} onClick={()=>handleShowMonths(month.month)} key={`show${month.month}`}>{month.month}</p>
           ))}
         </div>
-        <div className="md:relative w-full h-full">
+        <div className="lg:relative w-full h-full">
       {calender.map((month, index)=>(
-        <div key={month.month} className={ `${chooseMonth === month.month ? "block": "hidden"} cursor-pointer bg-orange-200 mt-8 p-2 md:mt-2 md:absolute top-8  shadow-sm shadow-black rounded-lg w-full`}>
+        <div key={month.month} className={ `${chooseMonth === month.month ? "block": "hidden"} cursor-pointer bg-orange-200 mt-8 p-2 lg:mt-2 lg:absolute top-8  shadow-sm shadow-black rounded-lg w-full`}>
           <div>
             <h1 key={`${month.month}h1`} className=" text-center flex justify-around flex-nowrap ">
               <span onClick={()=>handleMonthBack(index)} className="p-2" ><AiOutlineArrowLeft /></span>
@@ -283,62 +283,83 @@ const handleNoteEdit = async (title: string, note: string, id?: string)=>{
           </div>
       
           <div className="flex flex-row">
-            <div key={`${month.month}sunday`}>
-              <h1 className="p-2 w-8 h-8">S</h1>
+            <div key={`${month.month}sunday`} className="w-full h-full">
+              <h1 className="p-2 flex items-center justify-center">S</h1>
+              <ul>
               {month.sunday.map(day=>(
-                <p key={`${month.month}sunday${day}`} className={` ${today === day && chooseYear === currentYear && chooseMonth === currentMonth ?"bg-gray-600 rounded-xl shadow-sm shadow-black": ""} ${day === 0 && "h-8"} p-1`}>{day === 0? " ": day}</p>
+                <li key={`${month.month}sunday${day}`} className={` ${today === day && chooseYear === currentYear && chooseMonth === currentMonth ?"bg-gray-600 rounded-xl shadow-sm shadow-black": ""} ${day === 0 && "h-8"} p-1 flex items-center judtify-center`}>{day === 0? " ": day}</li>
               ))}
+              </ul>
+              
             </div>
-            <div key={`${month.month}monday`}>
-              <h1 className="p-2 w-8 h-8">M</h1>
+            <div key={`${month.month}monday`} className="w-full h-full">
+              <h1 className="p-2 flex items-center justify-center">M</h1>
+              <ul>
               {month.monday.map(day=>(
-                <p key={`${month.month}monday${day}`} className={` ${today === day && chooseYear === currentYear && chooseMonth === currentMonth ?"bg-gray-600 rounded-xl shadow-sm shadow-black": ""} ${day === 0 && "h-8"} p-1`}>{day === 0? " ": day}</p>
+                <li key={`${month.month}monday${day}`} className={` ${today === day && chooseYear === currentYear && chooseMonth === currentMonth ?"bg-gray-600 rounded-xl shadow-sm shadow-black": ""} ${day === 0 && "h-8"} p-1 flex items-center judtify-center`}>{day === 0? " ": day}</li>
               ))}
+              </ul>
+              
             </div>
-            <div key={`${month.month}tuesday`}>
-              <h1 className="p-2 w-8 h-8">T</h1>
+            <div key={`${month.month}tuesday`} className="w-full h-full">
+              <h1 className="p-2 flex items-center justify-center">T</h1>
+              <ul>
               {month.tuesday.map(day=>(
-                <p key={`${month.month}tuesday${day}`}className={` ${today === day && chooseYear === currentYear && chooseMonth === currentMonth ?"bg-gray-600 rounded-xl shadow-sm shadow-black": ""} ${day === 0 && "h-8"} p-1`}>{day === 0? " ": day}</p>
+                <li key={`${month.month}tuesday${day}`}className={` ${today === day && chooseYear === currentYear && chooseMonth === currentMonth ?"bg-gray-600 rounded-xl shadow-sm shadow-black": ""} ${day === 0 && "h-8"} p-1 flex items-center judtify-center`}>{day === 0? " ": day}</li>
               ))}
+              </ul>
+              
             </div>
-            <div key={`${month.month}wednesday`}>
-              <h1 className="p-2 w-8 h-8">W</h1>
+            <div key={`${month.month}wednesday`} className="w-full h-full">
+              <h1 className="p-2 flex items-center judtify-center">W</h1>
+              <ul>
               {month.wednesday.map(day=>(
-                <p key={`${month.month}wednesday${day}`}className={` ${today === day && chooseYear === currentYear && chooseMonth === currentMonth ?"bg-gray-600 rounded-xl shadow-sm shadow-black": ""} ${day === 0 && "h-8"} p-1`}>{day === 0? " ": day}</p>
+                <li key={`${month.month}wednesday${day}`}className={` ${today === day && chooseYear === currentYear && chooseMonth === currentMonth ?"bg-gray-600 rounded-xl shadow-sm shadow-black": ""} ${day === 0 && "h-8"} p-1 flex items-center judtify-center`}>{day === 0? " ": day}</li>
               ))}
+              </ul>
+        
             </div>
-            <div key={`${month.month}thursday`}>
-              <h1 className="p-2 w-8 h-8">T</h1>
+            <div key={`${month.month}thursday`} className="w-full h-full">
+              <h1 className="p-2 flex items-center judtify-center">T</h1>
+              <ul>
               {month.thursday.map(day=>(
-                <p key={`${month.month}thursday${day}`}className={` ${today === day && chooseYear === currentYear && chooseMonth === currentMonth ?"bg-gray-600 rounded-xl shadow-sm shadow-black": ""} ${day === 0 && "h-8"} p-1`}>{day === 0? " ": day}</p>
+                <li key={`${month.month}thursday${day}`}className={` ${today === day && chooseYear === currentYear && chooseMonth === currentMonth ?"bg-gray-600 rounded-xl shadow-sm shadow-black": ""} ${day === 0 && "h-8"} p-1 flex items-center judtify-center `}>{day === 0? " ": day}</li>
               ))}
+              </ul>
+              
             </div>
-            <div key={`${month.month}friday`}>
-              <h1 className="p-2 w-8 h-8">F</h1>
+            <div key={`${month.month}friday`} className="w-full h-full">
+              <h1 className="p-2 flex items-center judtify-center">F</h1>
+              <ul>
               {month.friday.map(day=>(
-                <p key={`${month.month}friday${day}`}className={` ${today === day && chooseYear === currentYear && chooseMonth === currentMonth ?"bg-gray-600 rounded-xl shadow-sm shadow-black": ""} ${day === 0 && "h-8"} p-1`}>{day === 0? " ": day}</p>
+                <li key={`${month.month}friday${day}`}className={` ${today === day && chooseYear === currentYear && chooseMonth === currentMonth ?"bg-gray-600 rounded-xl shadow-sm shadow-black": ""} ${day === 0 && "flex items-center judtify-center"} p-1`}>{day === 0? " ": day}</li>
               ))}
+              </ul>
+              
             </div>
-            <div key={`${month.month}saturday`}>
-              <h1 className="p-2 w-8 h-8">S</h1>
+            <div key={`${month.month}saturday`} className="w-full h-full">
+              <h1 className="p-2 flex items-center judtify-center">S</h1>
+              <ul>
               {month.saturday.map(day=>(
-                <p key={`${month.month}saturday${day}`}className={` ${today === day && chooseYear === currentYear && chooseMonth === currentMonth ?"bg-gray-600 rounded-xl shadow-sm shadow-black": ""} ${day === 0 && "h-8"} p-1`}>{day === 0? " ": day}</p>
+                <li key={`${month.month}saturday${day}`}className={` ${today === day && chooseYear === currentYear && chooseMonth === currentMonth ?"bg-gray-600 rounded-xl shadow-sm shadow-black": ""} ${day === 0 && "flex items-center judtify-center"} p-1`}>{day === 0? " ": day}</li>
               ))}
+              </ul>
+              
             </div>
           </div>
         </div>
       ))}
        </div>
-      <div className=" h-full w-full md:py-6 cursor-pointer flex ju md:flex-col mt-1 gap-2 md:gap-0 justify-center">
-        <h1 className="w-fit md:my-8 shadow-sm shadow-black rounded-md p-1 taskBar text-xs" onClick={()=>handleTRD(1)}>ToDo +</h1>
-        <h1 className="w-fit md:my-8 shadow-sm shadow-black rounded-md  taskBar p-1 text-xs" onClick={()=>handleTRD(2)}>Reminder +</h1>
-        <h1 className="w-fit h-fit md:my-4 text-xs shadow-sm shadow-black rounded-md p-1 taskBar" onClick={()=>handleTRD(3)}>Notes +</h1>
+      <div className=" bottom-0 h-1/3 w-full cursor-pointer flex justify-evenly lg:flex-col mt-1 gap-2 lg:gap-0 ">
+        <h1 className="w-fit h-fit  shadow-sm shadow-black rounded-lg p-1 taskBar text-xs" onClick={()=>handleTRD(1)}>ToDo +</h1>
+        <h1 className="w-fit h-fit  shadow-sm shadow-black rounded-lg  taskBar p-1 text-xs" onClick={()=>handleTRD(2)}>Reminder +</h1>
+        <h1 className="w-fit h-fit  text-xs shadow-sm shadow-black rounded-lg p-1 taskBar" onClick={()=>handleTRD(3)}>Notes +</h1>
       </div>
       </div>
     
       
-      <div className=" row-span-3 md:col-span-3 p-4 pt-0 h-full ">
-        <div className=" rounded-lg shadow-sm shadow-black bg-gray-900 w-full md:h-5/6 overflow-y-scroll flex flex-col p-4 md:relative cursor-pointer h-full">
+      <div className=" row-span-3 lg:col-span-3 p-4 pt-0 h-full ">
+        <div className=" rounded-lg shadow-sm shadow-black bg-gray-900 w-full lg:h-5/6 overflow-y-scroll flex flex-col p-4 lg:relative cursor-pointer h-full">
                 <div className=" bg-gray-100 text-black w-full flex flex-col gap-2 p-2 ">
                   <h1 className="bg-gray-300" >Todo</h1>
                   {todoList && todoList.length > 0 ? 
@@ -375,7 +396,7 @@ const handleNoteEdit = async (title: string, note: string, id?: string)=>{
                         </div>
                         
                         {/* <p key={`${index}some`}>{`${note.note?.substring(0, 25)}...`}</p> */}
-                        <div key={`${index}notes`} className={`${note.display ? "block": "hidden"} absolute w-full h-full top-0 left-0 bg-slate-50 text-black z-10`}>
+                        <div key={`${index}notes`} className={`${note.display ? "block": "hidden"} absolute top-10 w-full h-full lg:top-0 left-0 bg-slate-50 text-black z-10`}>
                           <div key={`${index}notet`} className="bg-gray-300 flex justify-between p-1">
                             <h1 key={`${index}noetitle`}>{note.title}</h1>
                             <p onClick={()=>handleNoteEdit(note.title, note.note, note._id)}><BiSolidEditAlt/></p>
