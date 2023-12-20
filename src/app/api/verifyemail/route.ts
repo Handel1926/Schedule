@@ -10,7 +10,7 @@ export async function POST(req: NextRequest){
     try {
         const reqBody = await req.formData()
         const token = reqBody.get("token")
-        console.log(token)
+        
 
         const user = await CalUser.findOne({
             verifyToken: token,
