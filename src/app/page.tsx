@@ -122,7 +122,8 @@ const handleYearForward = (year: number)=>{
 const handleLogout = async () => {
   try {
     await fetch("/api/logout",{
-      method: "GET"
+      method: "POST",
+      body: JSON.stringify("hello")
     })
     router.push("/")
   } catch (error) {
